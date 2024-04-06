@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Store</title>
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+        }
+        header {
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #666;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 40%;
+            border: 2px solid #777;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: border-color 0.3s ease-in-out;
+            background-color: #333;
+            color: #fff;
+        }
+        input[type="text"]:focus {
+            border-color: #999;
+        }
+        button {
+            background-color: #666;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #888;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 50%;
+            border: 6px solid #666;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 48px;">🚀 Welcome to Our Interstellar Laptop Store 🌌</h1>
+        <p style="font-size: 24px;">👾 Explore the galaxy's latest technology! 🛸</p>
+    </header>
+    <form action="/" method="post">
+        <input type="text" id="Age" name="Age" placeholder="Enter your age...">
+        <input type="text" id="Sex" name="Sex" placeholder="Enter your sex...">
+        <button type="submit" img src="static/images/dell1">Submit</button>
+    </form>
+    
+    {% if Age %}
+    <img src="{{ url_for('static', filename='images/Amazing.jpg') }}" alt="Amazing Laptop">
+    {% endif %}
+    {% if Sex %}
+    <img src="{{ url_for('static', filename='images/macbook1.jpg') }}" alt="Macbook Laptop">
+    {% endif %}
+</body>
+</html>
